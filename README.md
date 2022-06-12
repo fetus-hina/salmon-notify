@@ -28,7 +28,7 @@ Splatoon2.ink の API を利用しています。
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-Copyright (C) 2019 AIZAWA Hina
+Copyright (C) 2019-2022 AIZAWA Hina
 
 ## Acknowledgments
 

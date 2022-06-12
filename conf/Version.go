@@ -3,7 +3,7 @@ package conf
 import "fmt"
 
 const AppName string = "salmon-notify"
-const AppVersion string = "0.1.0"
+const AppVersion string = "0.2.0"
 const AppURL string = "https://github.com/fetus-hina/salmon-notify"
 
 func GetUserAgentString() string {
@@ -18,7 +18,7 @@ func GetUserAgentString() string {
 func CliVersion() string {
 	return fmt.Sprintf(
 		"%s version %s\n"+
-			"Copyright (C) 2019 AIZAWA Hina\n"+
+			"Copyright (C) 2019-2022 AIZAWA Hina\n"+
 			"Released under the MIT License\n"+
 			"%s",
 		AppName,

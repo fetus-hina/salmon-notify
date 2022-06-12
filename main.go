@@ -42,6 +42,11 @@ func doMain() error {
 	}
 
 	for _, detail := range schedules.Details {
+		if urlOrOption == "--stdout" {
+			fmt.Println(discord.FormatMessage(detail))
+			return nil
+		}
+
 		if detail.IsOpened() && detail.IsOpenRecently() {
 			webhook := discord.Webhook{
 				UserName: "サーモンランスケジュール",
@@ -63,7 +68,7 @@ func getCliOptions() (string, error) {
 	}
 
 	file := strings.Trim(os.Args[1], " ")
-	if file == "-v" || file == "--version" || file == "-h" || file == "--help" || isValidURL(file) {
+	if file == "-v" || file == "--version" || file == "-h" || file == "--help" || file == "--stdout" || isValidURL(file) {
 		return file, nil
 	}
 
@@ -75,8 +80,9 @@ func usage() string {
 		"%s <webhook-url>\n"+
 			"\n"+
 			"Usage:\n"+
+			"  -h --help     Show help\n"+
 			"  -v --version  Show version\n"+
-			"  -h --help     Show help",
+			"     --stdout   Write message to STDOUT",
 		os.Args[0],
 	)
 }
