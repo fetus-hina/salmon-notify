@@ -3,7 +3,7 @@ package conf
 import "fmt"
 
 const AppName string = "salmon-notify"
-const AppVersion string = "0.2.0"
+const AppVersion string = "0.2.1"
 const AppURL string = "https://github.com/fetus-hina/salmon-notify"
 
 func GetUserAgentString() string {

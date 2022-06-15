@@ -59,7 +59,17 @@ func formatWeapon(weapon types.Weapon) string {
 func getWeaponEmoji(weapon types.Weapon) string {
 	key, isFound := weapon.StatinkKey()
 	if !isFound {
-		return ""
+		id, err := weapon.ID.Int64()
+		if err == nil {
+			switch id {
+			case -1:
+				return ":question:"
+			case -2:
+				return ":partying_face:"
+			default:
+				return ""
+			}
+		}
 	}
 
 	// FIXME: shimiclean サーバー専用データを分離

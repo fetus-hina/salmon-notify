@@ -38,9 +38,9 @@ func (t Weapon) getWeaponInfo() (string, string, bool) {
 func getWeaponInfoFromID(id int64) (string, string, bool) {
 	switch id {
 	case -2:
-		return "ランダム", "", true
+		return "ランダム(クマ)", "", true
 	case -1:
-		return "ランダム", "", true
+		return "ランダム(通常)", "", true
 	case 0:
 		return "ボールドマーカー", "bold", true
 	case 10:
